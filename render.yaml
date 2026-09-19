@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: bot-claude2-birdeye
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python crypsenzapiclaude2.py
+    envVars:
+      - key: REAL_TRADING
+        value: "false"
+      - key: SOLANA_PRIVATE_KEY
+        sync: false
+      - key: HELIUS_API_KEYS
+        sync: false
+      - key: BIRDEYE_API_KEYS
+        sync: false
